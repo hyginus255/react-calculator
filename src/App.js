@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
-import Button from './Components/Button';
-import ResultTest from './Components/ResultText';
+import Button from './Components/Button/Button';
+import ResultTest from './Components/TextBox/ResultText';
 
 
 class App extends Component {
@@ -9,19 +9,19 @@ class App extends Component {
     result : 0
   }
 
-  changeResultHandler = (event) => {
+  addValueToResultTextHandler = (event) => {
     this.setState({
-      result : this.state.result === 0 ?  event.target.value : this.state.result + event.target.value,
+      result : this.state.result === 0 ? event.target.value : this.state.result + event.target.value,
     });
   }
 
-  clearResultHandler = () => {
+  clearResultTextHandler = () => {
     this.setState({
       result : 0
     });
   }
 
-  squareResultHandler = () => {
+  calSquareHandler = () => {
     this.setState({
       result : this.state.result ** 2
     });
@@ -29,33 +29,45 @@ class App extends Component {
 
   calResultHandler = () => {
     this.setState({
-      result : eval(this.state.result)
+      result : (0,eval)(this.state.result)
     });
   }
+
+  calPercentageHandler= () => {
+    this.setState({
+      result : this.state.result / 100
+    });
+  }
+
+  // negationHandler = () => {
+  //   this.setState({
+  //     result : 
+  //   })
+  // }
 
   render(){
     return(
       <div className="App">
         <ResultTest value = {this.state.result}/>
-        <Button value = "%" click = {this.changeResultHandler} />
-        <Button value = {['x', <sup>2</sup>]} click = {this.squareResultHandler}/>
-        <Button value = "C" click = {this.clearResultHandler} />
-        <Button value = "/" click = {this.changeResultHandler} />
-        <Button value = "7" click = {this.changeResultHandler} />
-        <Button value = "8" click = {this.changeResultHandler} />
-        <Button value = "9" click = {this.changeResultHandler} />
-        <Button value = "*" click = {this.changeResultHandler} />
-        <Button value = "4" click = {this.changeResultHandler} />
-        <Button value = "5" click = {this.changeResultHandler} />
-        <Button value = "6" click = {this.changeResultHandler} />
-        <Button value = "-" click = {this.changeResultHandler} />
-        <Button value = "1" click = {this.changeResultHandler} />
-        <Button value = "2" click = {this.changeResultHandler} />
-        <Button value = "3" click = {this.changeResultHandler} />
-        <Button value = "+" click = {this.changeResultHandler} />
-        <Button value = "+-" click = {this.changeResultHandler} />
-        <Button value = "0" click = {this.changeResultHandler} />
-        <Button value = "." click = {this.changeResultHandler} />
+        <Button value = "%" click = {this.calPercentageHandler} />
+        <Button value = "sqr" click = {this.calSquareHandler}/>
+        <Button value = "C" click = {this.clearResultTextHandler} />
+        <Button value = "/" click = {this.addValueToResultTextHandler} />
+        <Button value = "7" click = {this.addValueToResultTextHandler} />
+        <Button value = "8" click = {this.addValueToResultTextHandler} />
+        <Button value = "9" click = {this.addValueToResultTextHandler} />
+        <Button value = "*" click = {this.addValueToResultTextHandler} />
+        <Button value = "4" click = {this.addValueToResultTextHandler} />
+        <Button value = "5" click = {this.addValueToResultTextHandler} />
+        <Button value = "6" click = {this.addValueToResultTextHandler} />
+        <Button value = "-" click = {this.addValueToResultTextHandler} />
+        <Button value = "1" click = {this.addValueToResultTextHandler} />
+        <Button value = "2" click = {this.addValueToResultTextHandler} />
+        <Button value = "3" click = {this.addValueToResultTextHandler} />
+        <Button value = "+" click = {this.addValueToResultTextHandler} />
+        <Button value = "+-" click = {this.addValueToResultTextHandler} />
+        <Button value = "0" click = {this.addValueToResultTextHandler} />
+        <Button value = "." click = {this.addValueToResultTextHandler} />
         <Button value = "=" click = {this.calResultHandler}/>
       </div>
     )

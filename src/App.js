@@ -39,11 +39,11 @@ class App extends Component {
     });
   }
 
-  // negationHandler = () => {
-  //   this.setState({
-  //     result : 
-  //   })
-  // }
+  negationHandler = () => {
+    this.setState({
+      result : 
+    })
+  }
 
   render(){
     return(

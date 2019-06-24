@@ -65,7 +65,7 @@ class App extends Component {
         <Button value = "2" click = {this.addValueToResultTextHandler} />
         <Button value = "3" click = {this.addValueToResultTextHandler} />
         <Button value = "+" click = {this.addValueToResultTextHandler} />
-        <Button value = "+-" click = {this.addValueToResultTextHandler} />
+        <Button value = "+-" click = "" />
         <Button value = "0" click = {this.addValueToResultTextHandler} />
         <Button value = "." click = {this.addValueToResultTextHandler} />
         <Button value = "=" click = {this.calResultHandler}/>

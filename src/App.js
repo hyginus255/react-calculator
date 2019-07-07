@@ -35,7 +35,7 @@ class App extends Component {
       });
     } catch (error) {
       this.setState({
-        result : NaN
+        result : "error"
       });
     }
     
@@ -73,7 +73,7 @@ class App extends Component {
         <Button value = "2" click = {this.addValueToResultTextHandler} />
         <Button value = "3" click = {this.addValueToResultTextHandler} />
         <Button value = "+" click = {this.addValueToResultTextHandler} />
-        <Button value = "+-" click = "" />
+        <Button value = "+-"  />
         <Button value = "0" click = {this.addValueToResultTextHandler} />
         <Button value = "." click = {this.addValueToResultTextHandler} />
         <Button value = "=" click = {this.calResultHandler}/>

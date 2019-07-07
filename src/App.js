@@ -30,12 +30,13 @@ class App extends Component {
   calResultHandler = () => {
     try {
       let result =  eval(this.state.result);
+      this.setState({
+        result : result
+      });
     } catch (error) {
       console.log(error);
     }
-    this.setState({
-      result : result
-    });
+    
   }
 
   calPercentageHandler= () => {

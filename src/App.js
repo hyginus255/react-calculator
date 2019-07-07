@@ -35,7 +35,7 @@ class App extends Component {
       });
     } catch (error) {
       this.setState({
-        result : error.message
+        result : "error"
       });
     }
     

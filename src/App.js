@@ -28,8 +28,13 @@ class App extends Component {
   }
 
   calResultHandler = () => {
+    try {
+      let result =  eval(this.state.result);
+    } catch (error) {
+      console.log(error);
+    }
     this.setState({
-      result : (0,eval)(this.state.result)
+      result : result
     });
   }
 
